@@ -60,6 +60,9 @@ What it sets up
 * Hub gem for interacting with the GitHub API
 * Homebrew for managing operating system libraries (OS X only)
 * ImageMagick for cropping and resizing images
+* MongoDB for no-sql document store
+* NodeJS for writing apps in javascript
+* NVM for managing versions of NodeJS
 * Postgres for storing relational data
 * Postgres gem for talking to Postgres from Ruby
 * Qt for headless JavaScript testing via Capybara Webkit
