@@ -28,6 +28,22 @@ if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
     successfully source ~/.zshrc
 fi
 
+fancy_echo "Install nvm for changing node versions ..."
+  successfully curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+
+  if ! grep -qs ".nvm/nvm.sh"; then
+    successfully echo '[ -f ~/.nvm/nvm.sh ] && { source ~/.nvm/nvm.sh; nvm use default > /dev/null }' >> ~/.zshrc
+
+    fancy_echo "Enable nvm"
+      successfully source ~/.zshrc
+  fi
+
+fancy_echo "Install NodeJS"
+  successfully nvm install 0.10.4
+  successfully nvm use 0.10.4
+  successfully nvm alias default 0.10.4
+  successfully npm install -g nodemon express http-server localtunnel
+
 fancy_echo "Install git"
   successfully brew install git
 
@@ -111,6 +127,6 @@ fancy_echo "Install the heroku-config plugin for pulling config variables locall
   successfully heroku plugins:install git://github.com/ddollar/heroku-config.git
 
 if ! grep -qs "DO NOT EDIT BELOW THIS LINE" ~/.zshrc; then
-  fancy_echo "Prepare ~/.zshrc for http://github.com/thoughtbot/dotfiles ..."
+  fancy_echo "Prepare ~/.zshrc for http://github.com/prabirshrestha/dotfiles ..."
     successfully echo "# DO NOT EDIT BELOW THIS LINE\n" >> ~/.zshrc
 fi
