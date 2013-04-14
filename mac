@@ -31,12 +31,11 @@ fi
 fancy_echo "Install nvm for changing node versions ..."
   successfully curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
-  if ! grep -qs ".nvm/nvm.sh"; then
+  if ! grep -qs ".nvm/nvm.sh" ~/.zshrc; then
     successfully echo '[ -f ~/.nvm/nvm.sh ] && { source ~/.nvm/nvm.sh; nvm use default > /dev/null }' >> ~/.zshrc
-
-    fancy_echo "Enable nvm"
-      successfully source ~/.zshrc
   fi
+
+  source ~/.zshrc
 
 fancy_echo "Install NodeJS"
   successfully nvm install 0.10.4
