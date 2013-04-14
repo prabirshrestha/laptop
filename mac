@@ -92,6 +92,7 @@ fancy_echo "Set Ruby 1.9.3-p392 as global default Ruby ..."
   successfully rbenv shell 1.9.3-p392
 
 fancy_echo "Using ruby version ..."
+  successfully source ~/.zshrc
   successfully ruby -v
 
 fancy_echo "Update to latest Rubygems version ..."
