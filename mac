@@ -24,6 +24,9 @@ if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
     successfully source ~/.zshrc
 fi
 
+fancy_echo "Install git"
+  successfully brew install git
+
 fancy_echo "Install mongo"
   successfully brew install mongodb
 
