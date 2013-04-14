@@ -41,7 +41,7 @@ fancy_echo "Install NodeJS"
   successfully nvm install 0.10.4
   successfully nvm use 0.10.4
   successfully nvm alias default 0.10.4
-  successfully npm install -g nodemon express http-server localtunnel
+  successfully npm install -g nodemon express http-server localtunnel node-gyp
 
 fancy_echo "Install git"
   successfully brew install git
