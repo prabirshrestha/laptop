@@ -22,6 +22,18 @@ fancy_echo "Fixing permissions and bugs ..."
 fancy_echo "Install Homebrew, a good OS X package manager ..."
   successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
   successfully brew update
+  
+read "spf13vim? Would you like to install spf13-vim? (Y/n)"
+if [[ "spf13vim" =~ ^[Yy]$ ]]
+then
+  sh <(curl http://j.mp/spf13-vim3 -L)
+fi
+  
+read "ohmyzsh? Would you like to install oh-my-zsh? (Y/n)"
+if [[ "$ohmyzsh" =~ ^[Yy]$ ]]
+then
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+fi
 
 if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
   fancy_echo "Put Homebrew location earlier in PATH ..."
