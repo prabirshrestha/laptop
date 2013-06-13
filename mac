@@ -24,12 +24,13 @@ fancy_echo "Install Homebrew, a good OS X package manager ..."
   successfully brew update
 
 read "spfvim? Would you like to install spf13-vim? (Y/n)"
+read "ohmyzsh? Would you like to install oh-my-zsh? (Y/n)"
+
 if [[ "$spfvim" =~ ^[Yy]$ ]]
 then
   curl http://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh && rm spf13-vim.sh
 fi
-  
-read "ohmyzsh? Would you like to install oh-my-zsh? (Y/n)"
+
 if [[ "$ohmyzsh" =~ ^[Yy]$ ]]
 then
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
