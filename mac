@@ -13,9 +13,11 @@ if [ -f /etc/zshenv ]; then
     successfully sudo mv /etc/{zshenv,zshrc}
 fi
 
-fancy_echo "Fixing permissions ..."
+fancy_echo "Fixing permissions and bugs ..."
   successfully sudo mkdir -p /usr/local
   successfully sudo chown -R `whoami` /usr/local
+  successfully sudo mkdir -p /usr/include/python2.7
+  successfully sudo ln -s /System/Library/Frameworks/Python.framework/Versions/Current/include/python2.7/pyconfig.h /usr/include/python2.7/pyconfig.h
 
 fancy_echo "Install Homebrew, a good OS X package manager ..."
   successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
