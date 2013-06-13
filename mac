@@ -60,7 +60,7 @@ fancy_echo "Install The Silver Searcher (better than ack or grep) for searching 
   successfully brew install the_silver_searcher
 
 fancy_echo "Install ctags, for indexing files for vim tab completion of methods, classes, variables ..."
-  successfully brew install ctags
+  successfully brew install ctags-exuberant
 
 fancy_echo "Install tmux, for saving project state and switching between projects ..."
   successfully brew install tmux
