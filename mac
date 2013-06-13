@@ -23,6 +23,23 @@ fancy_echo "Install Homebrew, a good OS X package manager ..."
   successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
   successfully brew update
 
+if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
+  fancy_echo "Put Homebrew location earlier in PATH ..."
+    successfully echo "\n# recommended by brew doctor" >> ~/.zshrc
+    successfully echo "export PATH='/usr/local/bin:$PATH'\n" >> ~/.zshrc
+    successfully source ~/.zshrc
+fi
+
+fancy_echo "Settings ~/.zshrc to load ~/.zshrc_custom if it exists ..."
+  if ! grep -qs "source $HOME/.zsh_custom" ~/.zshrc; then
+    successfully echo "\n# load ~/.zshrc_custom if it exists" >> ~/.zshrc
+    successfully echo "if [[ -e $HOME/.zsh_custom ]]; then" >> ~/.zshrc
+    successfully echo "        source $HOME/.zsh_custom" >> ~/.zshrc
+    successfully echo "fi" >> ~/.zshrc
+  fi
+
+  successfully source ~/.zshrc
+
 read "spfvim? Would you like to install spf13-vim? (Y/n)"
 read "ohmyzsh? Would you like to install oh-my-zsh? (Y/n)"
 
@@ -34,13 +51,6 @@ fi
 if [[ "$ohmyzsh" =~ ^[Yy]$ ]]
 then
   curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-fi
-
-if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
-  fancy_echo "Put Homebrew location earlier in PATH ..."
-    successfully echo "\n# recommended by brew doctor" >> ~/.zshrc
-    successfully echo "export PATH='/usr/local/bin:$PATH'\n" >> ~/.zshrc
-    successfully source ~/.zshrc
 fi
 
 fancy_echo "Installing brew-cask"
