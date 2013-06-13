@@ -41,7 +41,7 @@ fancy_echo "Install NodeJS"
   successfully nvm install 0.10.10
   successfully nvm use 0.10.10
   successfully nvm alias default 0.10.10
-  successfully npm install -g nodemon express http-server localtunnel node-gyp
+  successfully npm install -g nodemon express http-server localtunnel node-gyp grunt bower
 
 fancy_echo "Install git"
   successfully brew install git
