@@ -22,9 +22,9 @@ fancy_echo "Fixing permissions and bugs ..."
 fancy_echo "Install Homebrew, a good OS X package manager ..."
   successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
   successfully brew update
-  
-read "spf13vim? Would you like to install spf13-vim? (Y/n)"
-if [[ "spf13vim" =~ ^[Yy]$ ]]
+
+read "spfvim? Would you like to install spf13-vim? (Y/n)"
+if [[ "$spfvim" =~ ^[Yy]$ ]]
 then
   curl http://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh && rm spf13-vim.sh
 fi
