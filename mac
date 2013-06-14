@@ -44,11 +44,11 @@ if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
     successfully source ~/.zshrc
 fi
 
-fancy_echo "Settings ~/.zshrc to load ~/.zshrc_custom if it exists ..."
-  if ! grep -qs "source $HOME/.zsh_custom" ~/.zshrc; then
-    successfully echo "\n# load ~/.zshrc_custom if it exists" >> ~/.zshrc
-    successfully echo "if [[ -e $HOME/.zsh_custom ]]; then" >> ~/.zshrc
-    successfully echo "        source $HOME/.zsh_custom" >> ~/.zshrc
+fancy_echo "Settings ~/.zshrc to load ~/.zshrc.local if it exists ..."
+  if ! grep -qs "source $HOME/.zshrc.local" ~/.zshrc; then
+    successfully echo "\n# load ~/.zshrc.local if it exists" >> ~/.zshrc
+    successfully echo "if [[ -e $HOME/.zshrc.local ]]; then" >> ~/.zshrc
+    successfully echo "        source $HOME/.zshrc.local" >> ~/.zshrc
     successfully echo "fi" >> ~/.zshrc
   fi
 
