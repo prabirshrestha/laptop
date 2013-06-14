@@ -23,6 +23,20 @@ fancy_echo "Install Homebrew, a good OS X package manager ..."
   successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
   successfully brew update
 
+read "spfvim? Would you like to install spf13-vim? (Y/n)"
+read "ohmyzsh? Would you like to install oh-my-zsh? (Y/n)"
+
+if [[ "$spfvim" =~ ^[Yy]$ ]]
+then
+  curl http://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh && rm spf13-vim.sh
+fi
+
+if [[ "$ohmyzsh" =~ ^[Yy]$ ]]
+then
+  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+fi
+
+
 if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
   fancy_echo "Put Homebrew location earlier in PATH ..."
     successfully echo "\n# recommended by brew doctor" >> ~/.zshrc
@@ -39,19 +53,6 @@ fancy_echo "Settings ~/.zshrc to load ~/.zshrc_custom if it exists ..."
   fi
 
   successfully source ~/.zshrc
-
-read "spfvim? Would you like to install spf13-vim? (Y/n)"
-read "ohmyzsh? Would you like to install oh-my-zsh? (Y/n)"
-
-if [[ "$spfvim" =~ ^[Yy]$ ]]
-then
-  curl http://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh && rm spf13-vim.sh
-fi
-
-if [[ "$ohmyzsh" =~ ^[Yy]$ ]]
-then
-  curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-fi
 
 fancy_echo "Installing brew-cask"
   successfully brew tap phinze/homebrew-cask
