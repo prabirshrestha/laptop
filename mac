@@ -95,6 +95,12 @@ fancy_echo "Install iTerm2"
 fancy_echo "Install Keka"
   successfully brew cask install keka
   
+fancy_echo "Install Virtual Box"
+  successfully brew cask install virtualbox
+
+fancy_echo "Install Vagrant"
+  successfully brew cask install vagrant
+
 fancy_echo "Install mongo"
   successfully brew install mongodb
 
