@@ -1,4 +1,3 @@
-#!/usr/bin/env zsh
 
 successfully() {
   $* || (echo "\nfailed" 1>&2 && exit 1)
@@ -162,6 +161,9 @@ fancy_echo "Update to latest Rubygems version ..."
 
 fancy_echo "Install critical Ruby gems for Rails development ..."
   successfully gem install bundler foreman pg rails thin --no-document
+
+fancy_echo "Intall tmuxinator .."
+  successfully gem install tmuxinator
 
 fancy_echo "Install GitHub CLI client ..."
   successfully gem install hub --no-document

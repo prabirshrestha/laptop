@@ -73,6 +73,7 @@ What it sets up
 * Ruby stable for writing general-purpose code
 * The Silver Searcher for finding things in files
 * Tmux for saving project state and switching between projects
+* Vagrant for creating and configuring lightweight, reproducible, and portable dev environments.
 * Watch for periodically executing a program and displaying the output
 
 It should take less than 15 minutes to install (depends on your machine).
