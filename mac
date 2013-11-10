@@ -146,10 +146,6 @@ fancy_echo "Install rbenv-gem-rehash so the shell automatically picks up binarie
 fancy_echo "Install ruby-build for installing Rubies ..."
   successfully brew install ruby-build
 
-fancy_echo "Install GNU Compiler Collection, a necessary prerequisite to installing Ruby ..."
-  successfully brew tap homebrew/dupes
-  successfully brew install apple-gcc42
-
 fancy_echo "Install Ruby 1.9.3-p392 ..."
   CC=gcc-4.2 successfully rbenv install 1.9.3-p392
 
