@@ -71,9 +71,9 @@ fancy_echo "Install nvm for changing node versions ..."
   source ~/.zshrc
 
 fancy_echo "Install NodeJS"
-  successfully nvm install 0.10.21
-  successfully nvm use 0.10.21
-  successfully nvm alias default 0.10.21
+  successfully nvm install 0.10.22
+  successfully nvm use 0.10.22
+  successfully nvm alias default 0.10.22
   successfully npm install -g nodemon express jshint http-server localtunnel node-gyp grunt grunt-init bower
 
 fancy_echo "Install git"
