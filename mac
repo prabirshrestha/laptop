@@ -42,6 +42,18 @@ if ! grep -qs "recommended by brew doctor" ~/.zshrc; then
     successfully source ~/.zshrc
 fi
 
+fancy_echo "Install rbenv for changing Ruby versions ..."
+  successfully brew install rbenv
+
+  if ! grep -qs "rbenv init" ~/.zshrc; then
+    successfully echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+
+    fancy_echo "Enable shims and autocompletion ..."
+      successfully eval "$(rbenv init -)"
+  fi
+
+  successfully source ~/.zshrc
+
 if [[ "$dotfiles" =~ ^[Yy]$ ]]
 then
   curl https://raw.github.com/prabirshrestha/dotfiles/master/install.sh | bash
@@ -133,18 +145,6 @@ fancy_echo "Install QT, used by Capybara Webkit for headless Javascript integrat
 
 fancy_echo "Install watch, used to execute a program periodically and show the output ..."
   successfully brew install watch
-
-fancy_echo "Install rbenv for changing Ruby versions ..."
-  successfully brew install rbenv
-
-  if ! grep -qs "rbenv init" ~/.zshrc; then
-    successfully echo 'eval "$(rbenv init -)"' >> ~/.zshrc
-
-    fancy_echo "Enable shims and autocompletion ..."
-      successfully eval "$(rbenv init -)"
-  fi
-
-  successfully source ~/.zshrc
 
 fancy_echo "Install rbenv-gem-rehash so the shell automatically picks up binaries after installing gems with binaries..."
   successfully brew install rbenv-gem-rehash
