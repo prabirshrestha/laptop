@@ -97,6 +97,9 @@ fancy_echo "Install Keka"
 fancy_echo "Install Adobe Air"
   successfully brew cask install adobe-air
   
+fancy_echo "Install Parallels 9"
+  successfully brew cask install parallels9
+  
 fancy_echo "Install Virtual Box"
   successfully brew cask install virtualbox
 
