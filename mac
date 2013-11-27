@@ -18,7 +18,7 @@ fancy_echo "Fixing permissions and bugs ..."
   successfully sudo ln -s /System/Library/Frameworks/Python.framework/Versions/Current/include/python2.7/pyconfig.h /usr/include/python2.7/pyconfig.h
 
 fancy_echo "Install Homebrew, a good OS X package manager ..."
-  successfully ruby <(curl -fsS https://raw.github.com/mxcl/homebrew/go)
+  successfully ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
   successfully brew update
 
 read "spfvim? Would you like to install spf13-vim? (Y/n)"
