@@ -90,6 +90,9 @@ fancy_echo "Install NodeJS"
 
 fancy_echo "Install git"
   successfully brew install git
+
+fancy_echo "Install vim"
+  successfully brew install vim
   
 fancy_echo "Install Alfred"
   successfully brew cask install alfred
