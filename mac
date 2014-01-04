@@ -145,6 +145,9 @@ fancy_echo "Install tmux, for saving project state and switching between project
 
 fancy_echo "Install reattach-to-user-namespace, for copy-paste and RubyMotion compatibility with tmux ..."
   successfully brew install reattach-to-user-namespace
+  
+fancy_echo "Install tree"
+  successfully brew install tree
 
 fancy_echo "Install QT, used by Capybara Webkit for headless Javascript integration testing ..."
   successfully brew install qt
