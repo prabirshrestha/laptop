@@ -86,10 +86,10 @@ fancy_echo "Install nvm for changing node versions ..."
   source ~/.zshrc
 
 fancy_echo "Install NodeJS"
-  successfully nvm install 0.10.25
-  successfully nvm use 0.10.25
-  successfully nvm alias default 0.10.25
-  successfully npm install -g nodemon json express jshint http-server localtunnel node-gyp gulp bower
+  successfully nvm install 0.10.26
+  successfully nvm use 0.10.26
+  successfully nvm alias default 0.10.26
+  successfully npm install -g nodemon node-inspector typescript mocha json jshint http-server localtunnel node-gyp gulp selenium-standalone
 
 fancy_echo "Install git"
   successfully brew install git
